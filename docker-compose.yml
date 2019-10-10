@@ -1,9 +1,18 @@
 version: '3'
 services:
-  neo4j:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: app
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    networks:
+      - default
+  neo4j:
+    image: neo4j
     container_name: neo4j
     ports:
       - "7474:7474"

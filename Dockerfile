@@ -1,2 +1,2 @@
-FROM neo4j
+FROM python
 
