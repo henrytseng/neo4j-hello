@@ -1,0 +1,15 @@
+version: '3'
+services:
+  neo4j:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: neo4j
+    ports:
+      - "7474:7474"
+    volumes:
+      - "./data:/data"
+    networks:
+      - default
+networks:
+  default:
