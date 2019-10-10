@@ -9,3 +9,8 @@ up:
 down:
 	docker-compose down
 
+log: up
+	docker logs app -f
+
+debug: up
+	docker attach app

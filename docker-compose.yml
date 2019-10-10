@@ -9,6 +9,8 @@ services:
       - .env
     ports:
       - "3000:3000"
+    volumes:
+      - ".:/app"
     networks:
       - default
   neo4j:
@@ -16,6 +18,7 @@ services:
     container_name: neo4j
     ports:
       - "7474:7474"
+      - "7687:7687"
     volumes:
       - "./data:/data"
     networks:
