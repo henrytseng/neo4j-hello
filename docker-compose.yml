@@ -13,6 +13,8 @@ services:
       - ".:/app"
     networks:
       - default
+    depends_on:
+      - neo4j
   neo4j:
     image: neo4j
     container_name: neo4j
