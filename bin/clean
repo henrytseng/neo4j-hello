@@ -2,5 +2,10 @@
 
 set -euo pipefail
 
-./halt
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+pushd $DIR
+
+bin/halt
 rm -rf data/
+
+popd
